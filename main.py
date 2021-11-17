@@ -4,9 +4,9 @@ import requests
 import telegram
 
 def main():
-    chat_id = os.environ['CHAT_ID']
-    devman_token = os.environ['DEVMAN_TOKEN']
-    bot_token = os.environ["BOT_TOKEN"]
+    chat_id = os.getenv('CHAT_ID')
+    devman_token = os.getenv('DEVMAN_TOKEN')
+    bot_token = os.getenv("BOT_TOKEN")
     bot = telegram.Bot(token=bot_token)
     url = "https://dvmn.org/api/long_polling/"
     headers = {"Authorization": f"Token {devman_token}"}
